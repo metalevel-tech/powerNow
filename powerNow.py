@@ -27,12 +27,18 @@ class Indicator():
     def create_menu(self):
         menu = Gtk.Menu()
         # menu item 1
-        #item_1 = Gtk.MenuItem('Menu item')
+        item_1 = Gtk.MenuItem('htop')
         # item_about.connect('activate', self.about)
-        #menu.append(item_1)
+        menu.append(item_1)
         # separator
-        #menu_sep = Gtk.SeparatorMenuItem()
-        #menu.append(menu_sep)
+        menu_sep = Gtk.SeparatorMenuItem()
+        menu.append(menu_sep)
+        # menu item 1
+        item_2 = Gtk.MenuItem('sudo htop')
+        # item_about.connect('activate', self.about)
+        menu.append(item_1)
+        # separator
+        menu.append(menu_sep)
         # quit
         item_quit = Gtk.MenuItem('Quit')
         item_quit.connect('activate', self.stop)
