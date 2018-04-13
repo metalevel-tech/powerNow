@@ -33,6 +33,7 @@ class Indicator():
         # separator
         menu_sep = Gtk.SeparatorMenuItem()
         menu.append(menu_sep)
+        menu.append(menu_sep)
         # quit
         item_quit = Gtk.MenuItem('Quit')
         item_quit.connect('activate', self.stop)
