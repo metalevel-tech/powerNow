@@ -7,6 +7,18 @@ from gi.repository import Gtk, AppIndicator3, GObject
 import time
 from threading import Thread
 
+def htop(self):
+    return os.system("gnome-terminal -x bash -c 'if [[ -f /usr/bin/htop ]]; then htop; else echo sudo apt install htop ? && sudo apt install htop && htop; fi; exec bash'")
+
+def sudohtop(self):
+    return os.system("gnome-terminal -x bash -c 'if [[ -f /usr/bin/htop ]]; then sudo htop; else echo sudo apt install htop ? && sudo apt install htop && sudo htop; fi; exec bash'")
+
+def sudopowertop(self):
+    return os.system("gnome-terminal -x bash -c 'if [[ -f /usr/bin/powertop ]]; then sudo powertop; else echo sudo apt install powertop ? && sudo apt install powertop && sudo powertop; fi; exec bash'")
+
+def sudotlpstat(self):
+    return os.system("gnome-terminal -x bash -c 'if [[ -f /usr/bin/tlp ]]; then sudo tlp stat; else echo sudo apt install tlp ? && sudo apt install tlp && sudo tlp stat; fi; exec bash'")
+
 class Indicator():
     def __init__(self):
         self.app = 'Current Power Consumption'
@@ -28,16 +40,29 @@ class Indicator():
         menu = Gtk.Menu()
         # menu item 1
         item_1 = Gtk.MenuItem('htop')
-        # item_about.connect('activate', self.about)
-        item_1.connect('activate', self.htop)
+        item_1.connect('activate', htop)
         menu.append(item_1)
         # separator
         menu_sep = Gtk.SeparatorMenuItem()
         menu.append(menu_sep)
-        # menu item 1
+        # menu item 2
         item_2 = Gtk.MenuItem('sudo htop')
-        item_2.connect('activate', self.stop)
+        item_2.connect('activate', sudohtop)
         menu.append(item_2)
+        # separator
+        menu_sep = Gtk.SeparatorMenuItem()
+        menu.append(menu_sep)
+        # menu item 3
+        item_3 = Gtk.MenuItem('sudo powertop')
+        item_3.connect('activate', sudopowertop)
+        menu.append(item_3)
+        # separator
+        menu_sep = Gtk.SeparatorMenuItem()
+        menu.append(menu_sep)
+        # menu item 4
+        item_4 = Gtk.MenuItem('sudo tlp stat')
+        item_4.connect('activate', sudotlpstat)
+        menu.append(item_4)
         # separator
         menu_sep = Gtk.SeparatorMenuItem()
         menu.append(menu_sep)
@@ -72,6 +97,8 @@ class Indicator():
                 power_value = int(voltage_value * current_value / 1000000)
                 power_watts = str(round(power_value / 1000000, 3))
                 power_watts = power_watts + " W"
+            else :
+                power_watts = "PowerNow"
             # apply the interface update using  GObject.idle_add()
             GObject.idle_add(
                 self.indicator.set_label,
@@ -80,9 +107,6 @@ class Indicator():
                 )
             time.sleep(10)
             t += 10
-
-    def htop(self):
-        os.system("gnome-terminal -x bash -c 'htop; exec bash'")
 
     def stop(self, source):
         Gtk.main_quit()
