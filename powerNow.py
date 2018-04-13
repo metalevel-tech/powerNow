@@ -29,12 +29,14 @@ class Indicator():
         # menu item 1
         item_1 = Gtk.MenuItem('htop')
         # item_about.connect('activate', self.about)
+        item_1.connect('activate', self.htop)
         menu.append(item_1)
         # separator
         menu_sep = Gtk.SeparatorMenuItem()
         menu.append(menu_sep)
         # menu item 1
         item_2 = Gtk.MenuItem('sudo htop')
+        item_2.connect('activate', self.stop)
         menu.append(item_2)
         # separator
         menu_sep = Gtk.SeparatorMenuItem()
@@ -59,6 +61,7 @@ class Indicator():
                 power_value = int(power_file.readline())
                 power_file.close()
                 power_watts = str(round(power_value / 1000000, 3))
+                power_watts = power_watts + " W"
             elif os.path.exists(voltage_path) and os.path.exists(current_path):
                 voltage_file = open(voltage_path,'r')
                 voltage_value = int(voltage_file.readline())
@@ -68,14 +71,18 @@ class Indicator():
                 current_file.close()
                 power_value = int(voltage_value * current_value / 1000000)
                 power_watts = str(round(power_value / 1000000, 3))
+                power_watts = power_watts + " W"
             # apply the interface update using  GObject.idle_add()
             GObject.idle_add(
                 self.indicator.set_label,
-                power_watts + " W", self.app,
+                power_watts, self.app,
                 priority=GObject.PRIORITY_DEFAULT
                 )
             time.sleep(10)
             t += 10
+
+    def htop(self):
+        os.system("gnome-terminal -x bash -c 'htop; exec bash'")
 
     def stop(self, source):
         Gtk.main_quit()
