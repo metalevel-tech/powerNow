@@ -33,6 +33,11 @@ class Indicator():
         # separator
         menu_sep = Gtk.SeparatorMenuItem()
         menu.append(menu_sep)
+        # menu item 1
+        item_2 = Gtk.MenuItem('sudo htop')
+        menu.append(item_2)
+        # separator
+        menu_sep = Gtk.SeparatorMenuItem()
         menu.append(menu_sep)
         # quit
         item_quit = Gtk.MenuItem('Quit')
