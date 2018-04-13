@@ -14,10 +14,10 @@ def sudohtop(self):
     return os.system("gnome-terminal -x bash -c 'if [[ -f /usr/bin/htop ]]; then sudo htop; else echo sudo apt install htop ? && sudo apt install htop && sudo htop; fi; exec bash'")
 
 def sudopowertop(self):
-    return os.system("gnome-terminal -x bash -c 'if [[ -f /usr/bin/powertop ]]; then sudo powertop; else echo sudo apt install powertop ? && sudo apt install powertop && sudo powertop; fi; exec bash'")
+    return os.system("gnome-terminal -x bash -c 'if [[ -f /usr/sbin/powertop ]]; then sudo powertop; else echo sudo apt install powertop ? && sudo apt install powertop && sudo powertop; fi; exec bash'")
 
 def sudotlpstat(self):
-    return os.system("gnome-terminal -x bash -c 'if [[ -f /usr/bin/tlp ]]; then sudo tlp stat; else echo sudo apt install tlp ? && sudo apt install tlp && sudo tlp stat; fi; exec bash'")
+    return os.system("gnome-terminal -x bash -c 'if [[ -f /usr/sbin/tlp ]]; then sudo tlp stat | less; else echo sudo apt install tlp ? && sudo apt install tlp && sudo tlp stat | less; fi; exec bash'")
 
 class Indicator():
     def __init__(self):
