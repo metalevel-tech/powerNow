@@ -43,18 +43,29 @@ class Indicator():
 
     def show_seconds(self):
         t = 0
+        power_path = '/sys/class/power_supply/BAT0/power_now'
+        voltage_path = '/sys/class/power_supply/BAT0/voltage_now'
+        current_path = '/sys/class/power_supply/BAT0/current_now'
+            
         while True:
-            power_path = '/sys/class/power_supply/BAT0/power_now'
             if os.path.exists(power_path):
                 power_file = open(power_path,'r')
                 power_value = int(power_file.readline())
                 power_file.close()
-                current_power = str(round(power_value / 1000000, 3))
-
+                power_watts = str(round(power_value / 1000000, 3))
+            elif os.path.exists(voltage_path) and os.path.exists(current_path):
+                voltage_file = open(voltage_path,'r')
+                voltage_value = int(voltage_file.readline())
+                voltage_file.close()
+                current_file = open(current_path,'r')
+                current_value = int(current_file.readline())
+                current_file.close()
+                power_value = int(voltage_value * current_value / 1000000)
+                power_watts = str(round(power_value / 1000000, 3))
             # apply the interface update using  GObject.idle_add()
             GObject.idle_add(
                 self.indicator.set_label,
-                current_power + " W", self.app,
+                power_watts + " W", self.app,
                 priority=GObject.PRIORITY_DEFAULT
                 )
             time.sleep(10)
