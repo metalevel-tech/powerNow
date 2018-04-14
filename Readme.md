@@ -1,6 +1,6 @@
 # Power Now - Power Consumption Indicator
 
-The script display the current power consuption of your laptop. The initial attention was to be just **Power Consumption Indicator**. But now it has menu which call few tool within `gnome-terminal` window. Thats are `htop`, `powertop`, `tlp stat`. If any of the tools is not installwd on the sistem, the script will ask you to install it.
+The script display the current power consumption of your laptop. The initial attention was to be just **Power Consumption Indicator**. But now it has menu which call few tool within `gnome-terminal` window. Thats are `htop`, `powertop`, `tlp stat`. If any of the tools is not installed on the system, the script will ask you to install it.
 
 ![Examples of usages 1.](powerNow.png)
 
@@ -57,7 +57,7 @@ The application is tested on:
 
 Note: This is my very first Python attemptm so I've used couple of references:
 
-- [Developing a status icon (ubuntu)][1]
+- [Developing a status icon][1]
 - [AppIndicator3: Set indicator icon from file name or GdkPixbuf][2]
 - [Writing indicators with Python, GIR and GTK3][3]
 - [Create an Ubuntu Application Indicator in Python: step-by-step guide][4]
@@ -96,6 +96,7 @@ The tool `powertop` is not just a monitoring tool it has also a calibrating opti
 See also:
 
 - [Extending Ubuntu's Battery Life](https://www.phoronix.com/scan.php?page=article&item=ubuntu_battery_life&num=2)
+- [TLP FAQ](http://linrunner.de/en/tlp/docs/tlp-faq.html)
 
   [1]: https://askubuntu.com/q/820842/566421
   [2]: https://askubuntu.com/q/770036/566421
