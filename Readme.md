@@ -2,7 +2,7 @@
 
 The script display the current power consuption of your laptop. The initial attention was to be just **Power Consumption Indicator**. But now it has menu which call few tool within `gnome-terminal` window. Thats are `htop`, `powertop`, `tlp stat`. If any of the tools is not installwd on the sistem, the script will ask you to install it.
 
-![Examples of usages 1.](PowerNow.png)
+![Examples of usages 1.](powerNow.png)
 
 The script works with **Ubuntu 16.04** and probably the only system specific thing is the file where the value of the current power consumption is stored. In my case I found it by the help of `tlp`:
 
@@ -43,11 +43,19 @@ $ sudo tlp stat | grep -P '\[m(W|A)\]'       # Output on Dell Vostro 3350 Laptop
 
 ## Usage
 
-...
+![Examples of usages 2.](powerNow-demo.gif)
+
+## Tests
+
+The application is tested on:
+
+- Lenovo ThinkPad X230 Laptop-Tablet with Ubuntu 16.04
+
+- Dell Vostro 3350 Laptop with Ubuntu 16.04
 
 ## References
 
-Note: This is my very first Python attempt.
+Note: This is my very first Python attemptm so I've used couple of references:
 
 - [Developing a status icon (ubuntu)][1]
 - [AppIndicator3: Set indicator icon from file name or GdkPixbuf][2]
@@ -57,6 +65,38 @@ Note: This is my very first Python attempt.
 - [Unix & Linux: How to find power draw in watts?][7] | [Watts / Volts / Amps / Ohms][8]
 - [Hands-on Python Tutorial » 3. More On Flow of Control » 3.1. If Statements][9]
 - [TypeError: worker() takes 0 positional arguments but 1 was given][10]
+
+
+## In Addition
+
+I can call this simple tool also **my laptop power management bundle**, so here are few specifics according the usage of `tlp` and `powertop` on my Lenovo Lenovo ThinkPad X230 Laptop-Tablet:
+
+- Installation and basic usage of `tlp`:
+
+    - Install the package: `sudo apt update && sudo apt install tlp`. 
+
+    - If you are using [`tp-smapi`][11] the [better way][12] to install the package is:
+
+        ````bash
+        sudo add-apt-repository ppa:linrunner/tlp
+        sudo apt-get update
+        sudo apt-get install tlp tlp-rdw
+        sudo apt-get install tp-smapi-dkms acpi-call-dkms
+        ````
+
+- There are two services that will be installed `tlp.service` and `tlp-sleep.service`.
+
+- Use `sudo tlp stat` to check the current settings.
+
+- Use `nano /etc/default/tlp` to tweak the configuration.
+
+- Use `sudo tlp start` to apply the configuration.
+
+The tool `powertop` is not just a monitoring tool it has also a calibrating option: `powertop -c`, and manual handling of the power management for the peripherical devices.
+
+See also: 
+
+- [Extending Ubuntu's Battery Life](https://www.phoronix.com/scan.php?page=article&item=ubuntu_battery_life&num=2)
 
   [1]: https://askubuntu.com/q/820842/566421
   [2]: https://askubuntu.com/q/770036/566421
@@ -68,3 +108,5 @@ Note: This is my very first Python attempt.
   [8]: https://www.rapidtables.com/calc/electric/watt-volt-amp-calculator.html
   [9]: https://anh.cs.luc.edu/python/hands-on/3.1/handsonHtml/ifstatements.html
   [10]: https://stackoverflow.com/q/18884782/6543935
+  [11]: http://linrunner.de/en/tlp/docs/tlp-faq.html#kernmod
+  [12]: https://bugs.launchpad.net/ubuntu/+source/tp-smapi/+bug/1633216
