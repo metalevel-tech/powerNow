@@ -1,6 +1,6 @@
 # Power Now
 
-![Examples of usages 1.]()
+![Examples of usages 1.](PowerNow.png)
 
 ## References
 
