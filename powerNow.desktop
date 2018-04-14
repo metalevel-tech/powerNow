@@ -1,6 +1,6 @@
 [Desktop Entry]
 Type=Application
-Exec=nohup /usr/local/bin/powerNow >/dev/null 2>&1 &
+Exec=nohup powerNow >/dev/null 2>&1 &
 Hidden=false
 NoDisplay=false
 X-GNOME-Autostart-enabled=true
