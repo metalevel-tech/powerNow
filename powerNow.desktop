@@ -1,0 +1,11 @@
+[Desktop Entry]
+Type=Application
+Exec=nohup /usr/local/bin/powerNow >/dev/null 2>&1 &
+Hidden=false
+NoDisplay=false
+X-GNOME-Autostart-enabled=true
+Name[en_US]=PowerNow
+Name=PowerNow
+Comment[en_US]=Show the Current Power Consuption
+Comment=Show the Current Power Consuption
+Icon=/usr/share/unity/icons/launcher_bfb.png
