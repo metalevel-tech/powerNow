@@ -1,6 +1,10 @@
 # Power Now
 
-## References:
+![Examples of usages 1.]()
+
+## References
+
+Note: This is my very first Python attempt.
 
 - [Developing a status icon (ubuntu)][1]
 - [AppIndicator3: Set indicator icon from file name or GdkPixbuf][2]
