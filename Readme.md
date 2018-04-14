@@ -66,16 +66,15 @@ Note: This is my very first Python attemptm so I've used couple of references:
 - [Hands-on Python Tutorial » 3. More On Flow of Control » 3.1. If Statements][9]
 - [TypeError: worker() takes 0 positional arguments but 1 was given][10]
 
-
 ## In Addition
 
 I can call this simple tool also **my laptop power management bundle**, so here are few specifics according the usage of `tlp` and `powertop` on my Lenovo Lenovo ThinkPad X230 Laptop-Tablet:
 
 - Installation and basic usage of `tlp`:
 
-    - Install the package: `sudo apt update && sudo apt install tlp`. 
+  - Install the package: `sudo apt update && sudo apt install tlp`.
 
-    - If you are using [`tp-smapi`][11] the [better way][12] to install the package is:
+  - If you are using [`tp-smapi`][11] the [better way][12] to install the package is:
 
         ````bash
         sudo add-apt-repository ppa:linrunner/tlp
@@ -94,7 +93,7 @@ I can call this simple tool also **my laptop power management bundle**, so here 
 
 The tool `powertop` is not just a monitoring tool it has also a calibrating option: `powertop -c`, and manual handling of the power management for the peripherical devices.
 
-See also: 
+See also:
 
 - [Extending Ubuntu's Battery Life](https://www.phoronix.com/scan.php?page=article&item=ubuntu_battery_life&num=2)
 
