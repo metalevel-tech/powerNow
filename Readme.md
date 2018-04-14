@@ -14,7 +14,7 @@ $ sudo tlp stat | grep -P '\[m(W|A)\]'       # Output on Dell Vostro 3350 Laptop
 /sys/class/power_supply/BAT0/power_now                      =  6700 [mA]
 ````
 
-**Note** some devices provide the current power consumption in watts, but some devices provides current values of the voltage and the current (amps) - in this case we must calculate the current power.
+**Note** some devices provide the current **power** consumption in watts, but some devices provides current values of the **voltage** and the **current** (amps) - in this case we must calculate the current power.
 
 ## Installation
 
@@ -76,12 +76,12 @@ I can call this simple tool also **my laptop power management bundle**, so here 
 
   - If you are using [`tp-smapi`][11] the [better way][12] to install the package is:
 
-        ````bash
-        sudo add-apt-repository ppa:linrunner/tlp
-        sudo apt-get update
-        sudo apt-get install tlp tlp-rdw
-        sudo apt-get install tp-smapi-dkms acpi-call-dkms
-        ````
+     ````bash
+    sudo add-apt-repository ppa:linrunner/tlp
+    sudo apt-get update
+    sudo apt-get install tlp tlp-rdw
+    sudo apt-get install tp-smapi-dkms acpi-call-dkms
+    ````
 
 - There are two services that will be installed `tlp.service` and `tlp-sleep.service`.
 
