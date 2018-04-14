@@ -14,7 +14,7 @@ $ sudo tlp stat | grep -P '\[m(W|A)\]'       # Output on Dell Vostro 3350 Laptop
 /sys/class/power_supply/BAT0/power_now                      =  6700 [mA]
 ````
 
-**Note** some devices provide the current **power** consumption in watts, but some devices provides current values of the **voltage** and the **current** (amps) - in this case we must calculate the current power.
+Note some devices provide the current **power** consumption in watts, but some devices provide the current values of the **voltage** and the **current** (amps) and - we must calculate the current power. The script covers these cases.
 
 ## Installation
 
@@ -55,7 +55,7 @@ The application is tested on:
 
 ## References
 
-Note: This is my very first Python attemptm so I've used couple of references:
+Note: This is my very first Python attempt so I've used couple of references:
 
 - [Developing a status icon][1]
 - [AppIndicator3: Set indicator icon from file name or GdkPixbuf][2]
@@ -91,7 +91,7 @@ I can call this simple tool also **my laptop power management bundle**, so here 
 
 - Use `sudo tlp start` to apply the configuration.
 
-The tool `powertop` is not just a monitoring tool it has also a calibrating option: `powertop -c`, and manual handling of the power management for the peripherical devices.
+The tool `powertop` is not just a monitoring tool it has also a calibrating option: `powertop -c`, and manual handling of the power management for the peripheral devices.
 
 See also:
 
