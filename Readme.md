@@ -57,7 +57,7 @@ The application is tested on:
 
 Note: This is my very first Python attempt so I've used couple of references:
 
-- [https://askubuntu.com/questions/820842/how-do-i-get-the-current-power-consumption-in-the-status-bar-developing-a-stat][1]
+- [How do I get the current power consumption in the status bar? (Developing a status icon)][1]
 - [AppIndicator3: Set indicator icon from file name or GdkPixbuf][2]
 - [Writing indicators with Python, GIR and GTK3][3]
 - [Create an Ubuntu Application Indicator in Python: step-by-step guide][4]
