@@ -2,7 +2,7 @@
 
 The script display the current power consumption of your laptop. The initial attention was to be just **Power Consumption Indicator**. But now it has menu which call few tool within `gnome-terminal` window. Thats are `htop`, `powertop`, `tlp stat`. If any of the tools is not installed on the system, the script will ask you to install it.
 
-![Examples of usages 1.](powerNow.png)
+![Examples of usages 1.](.images/powerNow.png)
 
 The script works with **Ubuntu 16.04** and probably the only system specific thing is the file where the value of the current power consumption is stored. In my case I found it by the help of `tlp`:
 
@@ -43,7 +43,7 @@ $ sudo tlp stat | grep -P '\[m(W|A)\]'       # Output on Dell Vostro 3350 Laptop
 
 ## Usage
 
-![Examples of usages 2.](powerNow-demo.gif)
+![Examples of usages 2.](.images/powerNow-demo.gif)
 
 ## Tests
 
