@@ -18,7 +18,28 @@ $ sudo tlp stat | grep -P '\[m(W|A)\]'       # Output on Dell Vostro 3350 Laptop
 
 ## Installation
 
-...
+- Copy the script to `/usr/local/bin` to make it accessible system wide:
+    ```bash
+    sudo wget https://raw.githubusercontent.com/pa4080/powerNow/master/powerNow.py -O /usr/local/bin/powerNow
+    sudo chmod +x /usr/local/bin/powerNow
+    ````
+
+- Copy the script to `~/bin` to make it accessible only for the current user:
+    ```bash
+    wget https://raw.githubusercontent.com/pa4080/powerNow/master/powerNow.py -O $HOME/bin/powerNow
+    chmod +x $HOME/bin/powerNow
+    ````
+- Copy the desktop file to `~/Desktop`:
+    ```bash
+    wget https://raw.githubusercontent.com/pa4080/powerNow/master/powerNow.desktop -O $HOME/Desktop/powerNow.desktop
+    chmod +x $HOME/Desktop/powerNow.desktop
+    ````
+
+- Copy the desktop file to `~/.config/autostart`:
+    ```bash
+    wget https://raw.githubusercontent.com/pa4080/powerNow/master/powerNow.desktop -O $HOME/.config/autostart/powerNow.desktop
+    chmod +x $HOME/.config/autostart/powerNow.desktop
+    ````
 
 ## Usage
 
