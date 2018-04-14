@@ -57,7 +57,7 @@ The application is tested on:
 
 Note: This is my very first Python attempt so I've used couple of references:
 
-- [Developing a status icon][1]
+- [https://askubuntu.com/questions/820842/how-do-i-get-the-current-power-consumption-in-the-status-bar-developing-a-stat][1]
 - [AppIndicator3: Set indicator icon from file name or GdkPixbuf][2]
 - [Writing indicators with Python, GIR and GTK3][3]
 - [Create an Ubuntu Application Indicator in Python: step-by-step guide][4]
@@ -65,6 +65,9 @@ Note: This is my very first Python attempt so I've used couple of references:
 - [Unix & Linux: How to find power draw in watts?][7] | [Watts / Volts / Amps / Ohms][8]
 - [Hands-on Python Tutorial » 3. More On Flow of Control » 3.1. If Statements][9]
 - [TypeError: worker() takes 0 positional arguments but 1 was given][10]
+- [Graphical environment in gtk+ programming](https://askubuntu.com/q/1024989/566421)
+- [Anjuta DevStudio](https://developer.gnome.org/anjuta-manual/stable/)
+- [Glade - A User Interface Designer](https://glade.gnome.org/index.html)
 
 ## In Addition
 
