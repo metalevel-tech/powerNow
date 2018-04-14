@@ -1,6 +1,28 @@
-# Power Now
+# Power Now - Power Consumption Indicator
+
+The script display the current power consuption of your laptop. The initial attention was to be just **Power Consumption Indicator**. But now it has menu which call few tool within `gnome-terminal` window. Thats are `htop`, `powertop`, `tlp stat`. If any of the tools is not installwd on the sistem, the script will ask you to install it.
 
 ![Examples of usages 1.](PowerNow.png)
+
+The script works with **Ubuntu 16.04** and probably the only system specific thing is the file where the value of the current power consumption is stored. In my case I found it by the help of `tlp`:
+
+```bash
+$ sudo tlp stat | grep -P '\[m(W|A)\]'       # Output on Lenovo ThinkPad X230 Laptop-Tablet
+/sys/class/power_supply/BAT0/power_now                      =  11246 [mW]
+
+$ sudo tlp stat | grep -P '\[m(W|A)\]'       # Output on Dell Vostro 3350 Laptop
+/sys/class/power_supply/BAT0/power_now                      =  6700 [mA]
+````
+
+Note some devices provide the current power consumption in watts, but some devices provides current values of the voltage and the current (amps) - in this case we must calculate the current power.
+
+## Installation
+
+...
+
+## Usage
+
+...
 
 ## References
 
@@ -13,8 +35,7 @@ Note: This is my very first Python attempt.
 - [AppIndicator3 Documentation][5] (also [here][6])
 - [Unix & Linux: How to find power draw in watts?][7] | [Watts / Volts / Amps / Ohms][8]
 - [Hands-on Python Tutorial » 3. More On Flow of Control » 3.1. If Statements][9]
-- [TypeError: worker() takes 0 positional arguments but 1 was given
-][10]
+- [TypeError: worker() takes 0 positional arguments but 1 was given][10]
 
   [1]: https://askubuntu.com/q/820842/566421
   [2]: https://askubuntu.com/q/770036/566421
