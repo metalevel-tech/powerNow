@@ -14,7 +14,7 @@ $ sudo tlp stat | grep -P '\[m(W|A)\]'       # Output on Dell Vostro 3350 Laptop
 /sys/class/power_supply/BAT0/power_now                      =  6700 [mA]
 ````
 
-Note some devices provide the current power consumption in watts, but some devices provides current values of the voltage and the current (amps) - in this case we must calculate the current power.
+**Note** some devices provide the current power consumption in watts, but some devices provides current values of the voltage and the current (amps) - in this case we must calculate the current power.
 
 ## Installation
 
