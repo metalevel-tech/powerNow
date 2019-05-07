@@ -17,7 +17,7 @@ def sudopowertop(self):
     return os.system("gnome-terminal -x bash -c 'if [[ -f /usr/sbin/powertop ]]; then sudo powertop; else echo sudo apt install powertop ? && sudo apt install powertop && sudo powertop; fi; exec bash'")
 
 def sudotlpstat(self):
-    return os.system("gnome-terminal -x bash -c 'if [[ -f /usr/sbin/tlp ]]; then sudo tlp stat | less; else echo sudo apt install tlp ? && sudo apt install tlp && sudo tlp stat | less; fi; exec bash'")
+    return os.system("gnome-terminal -x bash -c 'if [[ -f /usr/sbin/tlp ]]; then sudo tlp-stat | less; else echo sudo apt install tlp ? && sudo apt install tlp && sudo tlp-stat | less; fi; exec bash'")
 
 class Indicator():
     def __init__(self):
@@ -60,7 +60,7 @@ class Indicator():
         menu_sep = Gtk.SeparatorMenuItem()
         menu.append(menu_sep)
         # menu item 4
-        item_4 = Gtk.MenuItem('sudo tlp stat')
+        item_4 = Gtk.MenuItem('sudo tlp-stat')
         item_4.connect('activate', sudotlpstat)
         menu.append(item_4)
         # separator
