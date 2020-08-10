@@ -1,4 +1,5 @@
 #!/usr/bin/env python3
+# Ubuntu 20.04: sudo apt-get install gir1.2-appindicator3-0.1
 import signal
 import gi
 import os
@@ -8,16 +9,16 @@ import time
 from threading import Thread
 
 def htop(self):
-    return os.system("gnome-terminal -x bash -c 'if [[ -f /usr/bin/htop ]]; then htop; else echo sudo apt install htop ? && sudo apt install htop && htop; fi; exec bash'")
+    return os.system("gnome-terminal -- bash -c 'if [[ -f /usr/bin/htop ]]; then htop; else echo sudo apt install htop ? && sudo apt install htop && htop; fi; exec bash'")
 
 def sudohtop(self):
-    return os.system("gnome-terminal -x bash -c 'if [[ -f /usr/bin/htop ]]; then sudo htop; else echo sudo apt install htop ? && sudo apt install htop && sudo htop; fi; exec bash'")
+    return os.system("gnome-terminal -- bash -c 'if [[ -f /usr/bin/htop ]]; then sudo htop; else echo sudo apt install htop ? && sudo apt install htop && sudo htop; fi; exec bash'")
 
 def sudopowertop(self):
-    return os.system("gnome-terminal -x bash -c 'if [[ -f /usr/sbin/powertop ]]; then sudo powertop; else echo sudo apt install powertop ? && sudo apt install powertop && sudo powertop; fi; exec bash'")
+    return os.system("gnome-terminal -- bash -c 'if [[ -f /usr/sbin/powertop ]]; then sudo powertop; else echo sudo apt install powertop ? && sudo apt install powertop && sudo powertop; fi; exec bash'")
 
 def sudotlpstat(self):
-    return os.system("gnome-terminal -x bash -c 'if [[ -f /usr/sbin/tlp ]]; then sudo tlp-stat | less; else echo sudo apt install tlp ? && sudo apt install tlp && sudo tlp-stat | less; fi; exec bash'")
+    return os.system("gnome-terminal -- bash -c 'if [[ -f /usr/sbin/tlp ]]; then sudo tlp-stat | less; else echo sudo apt install tlp ? && sudo apt install tlp && sudo tlp-stat | less; fi; exec bash'")
 
 class Indicator():
     def __init__(self):
