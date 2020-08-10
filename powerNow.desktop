@@ -8,4 +8,4 @@ Name[en_US]=PowerNow
 Name=PowerNow
 Comment[en_US]=Show the Current Power Consuption
 Comment=Show the Current Power Consuption
-Icon=/usr/share/unity/icons/launcher_bfb.png
+Icon=./launcher_bfb.png

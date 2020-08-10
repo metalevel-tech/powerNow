@@ -22,7 +22,7 @@ def sudotlpstat(self):
 class Indicator():
     def __init__(self):
         self.app = 'Current Power Consumption'
-        iconpath = "/usr/share/unity/icons/launcher_bfb.png"
+        iconpath = os.path.abspath(os.getcwd()) + "/launcher_bfb.png"
 
         self.indicator = AppIndicator3.Indicator.new(
             self.app, iconpath,
