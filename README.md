@@ -20,24 +20,24 @@ Note some devices provide the current **power** consumption in watts, but some d
 
 - Copy the script to `/usr/local/bin` to make it accessible as shell command system wide:
     ```bash
-    sudo wget https://raw.githubusercontent.com/pa4080/powerNow/master/powerNow.py -O /usr/local/bin/powerNow
+    sudo wget https://raw.githubusercontent.com/metalevel-tech/powerNow/master/powerNow.py -O /usr/local/bin/powerNow
     sudo chmod +x /usr/local/bin/powerNow
     ````
 
 - Copy the script to `~/bin` to make it accessible only for the current user:
     ```bash
-    wget https://raw.githubusercontent.com/pa4080/powerNow/master/powerNow.py -O $HOME/bin/powerNow
+    wget https://raw.githubusercontent.com/metalevel-tech/powerNow/master/powerNow.py -O $HOME/bin/powerNow
     chmod +x $HOME/bin/powerNow
     ````
 - Copy the desktop file to `~/Desktop` (the script is required):
     ```bash
-    wget https://raw.githubusercontent.com/pa4080/powerNow/master/powerNow.desktop -O $HOME/Desktop/powerNow.desktop
+    wget https://raw.githubusercontent.com/metalevel-tech/powerNow/master/powerNow.desktop -O $HOME/Desktop/powerNow.desktop
     chmod +x $HOME/Desktop/powerNow.desktop
     ````
 
 - Copy the desktop file to `~/.config/autostart` (the script is required):
     ```bash
-    wget https://raw.githubusercontent.com/pa4080/powerNow/master/powerNow.desktop -O $HOME/.config/autostart/powerNow.desktop
+    wget https://raw.githubusercontent.com/metalevel-tech/powerNow/master/powerNow.desktop -O $HOME/.config/autostart/powerNow.desktop
     chmod +x $HOME/.config/autostart/powerNow.desktop
     ````
 
