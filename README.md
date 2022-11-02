@@ -40,6 +40,17 @@ Note some devices provide the current **power** consumption in watts, but some d
     wget https://raw.githubusercontent.com/metalevel-tech/powerNow/master/powerNow.desktop -O $HOME/.config/autostart/powerNow.desktop
     chmod +x $HOME/.config/autostart/powerNow.desktop
     ````
+## Installation update 2022
+
+Right now I'm using Kali Linux 2022 on my ThinkPad. To get the tool operational, I was needed to download and manually install the .deb package [gir1.2-appindicator3-0.1_0.4.92-7_amd64.deb](http://ftp.de.debian.org/debian/pool/main/liba/libappindicator/gir1.2-appindicator3-0.1_0.4.92-7_amd64.deb)
+
+```bash
+cd ~/Downloads
+wget http://ftp.de.debian.org/debian/pool/main/liba/libappindicator/gir1.2-appindicator3-0.1_0.4.92-7_amd64.deb
+sudo apt install ./gir1.2-appindicator3-0.1_0.4.92-7_amd64.deb
+```
+
+Some things used in the script are deprecated, but it still works, so I will fix them in the future. Also the icons used in the desktop launcher and in the indicator itself are not available in Kali.
 
 ## Usage
 
